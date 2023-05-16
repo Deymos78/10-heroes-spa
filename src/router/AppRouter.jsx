@@ -14,8 +14,9 @@ export const AppRouter = () => {
         <Routes>
 
             <Route path="login" element={<LoginPage />}/>
-            
 
+            {/* Con esta ruta apuntaremos a heroes routes donde tendremos un componente Routes con varias Route */}
+            {/* Tambien logramos que cualquier ruta que no sea login pase por el componente de HeroesRoutes */}
             <Route path="/*" element={<HeroesRoutes />}/>
 
         </Routes>
