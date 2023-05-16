@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 export const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-dark p-2">
             
             <Link 
                 className="navbar-brand" 
@@ -16,14 +16,17 @@ export const Navbar = () => {
                 <div className="navbar-nav">
 
                     <NavLink 
-                        className="nav-item nav-link" 
+                    // Para colocar la clase active se usa para cuando eeste seleccionado, por ello la activaremos si es la ruta activa
+                    // Active no es la unica clase que se le puede colocar por ello hay que ssaber hacerlo, para poder hacerlo
+                    // con cualquier clase
+                        className={ ({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`} 
                         to="/marvel"
                     >
                         Marvel
                     </NavLink>
 
                     <NavLink 
-                        className="nav-item nav-link" 
+                        className={ ({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
                         to="/dc"
                     >
                         DC
@@ -31,14 +34,17 @@ export const Navbar = () => {
                 </div>
             </div>
 
-            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
-                    <NavLink 
-                        className="nav-item nav-link" 
-                        to="/login"
+                    <span className="nav-item nav-link text-primary">
+                        Andres
+                    </span>
+
+                    <button
+                        className="nav-item nav-link btn"
                     >
                         Logout
-                    </NavLink>
+                    </button>
                 </ul>
             </div>
         </nav>
