@@ -1,13 +1,20 @@
+import { useContext } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../auth';
 
 
 export const Navbar = () => {
+
+    // Cuando se realiza el login tendremos disponibles los datos del usuario
+    const { user, logout } = useContext( AuthContext );  
 
     // El useNavigate se utiliza para la navegacion programatica, actualizando a url, no renderiza un elemento en el DOM 
     // como si lo hacen el componente Link y el NavLink, es una funcion que se encarga de actualizar a url, el useNavigate devuelve una funcion
     const navigate = useNavigate();
 
-    const onLogout =() =>{
+    const onLogout =() =>{ 
+        
+        logout();
         
         navigate('/login', {
             // El replace evita que se puede volver al historial anterior
@@ -60,7 +67,7 @@ export const Navbar = () => {
             <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
                 <ul className="navbar-nav ml-auto">
                     <span className="nav-item nav-link text-primary">
-                        Andres
+                        { user?.name }
                     </span>
 
                     <button

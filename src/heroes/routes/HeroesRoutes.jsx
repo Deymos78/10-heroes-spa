@@ -20,6 +20,7 @@ export const HeroesRoutes = () => {
                 
                 
                 <Route path="search" element={<SearchPage />}/>
+                
                 {/* Definimos un parametro variable en la URl donde se asociara a un valor que se le pase por url*/}
                 <Route path="hero/:id" element={<HeroPage />}/>
 
