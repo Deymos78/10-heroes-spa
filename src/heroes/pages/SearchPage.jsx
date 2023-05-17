@@ -1,7 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 import { useForm } from "../../hooks/useForm";
-import { HeroCard } from "../components"
+import { HeroCard } from "../components";
 import { getHeroesByName } from "../helpers";
 
 
@@ -24,7 +24,6 @@ export const SearchPage = () => {
   const { searchText, onInputChange, onResetForm} = useForm({
     searchText: q
   });
-
 
   const onSearchSubmit = ( event ) => {
       event.preventDefault();
@@ -88,10 +87,8 @@ export const SearchPage = () => {
                 key={hero.id} 
                 {...hero}  
               />
-            ))
-            
+            )) 
           }
-          
 
         </div>
 
