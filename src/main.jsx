@@ -10,4 +10,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <HeroesApp />
     </BrowserRouter>
   </React.StrictMode>,
+  // Nuevos cambios en la rama route porefdfa
 )

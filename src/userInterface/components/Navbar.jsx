@@ -6,6 +6,7 @@ export const Navbar = () => {
     // El useNavigate se utiliza para la navegacion programatica, actualizando a url, no renderiza un elemento en el DOM 
     // como si lo hacen el componente Link y el NavLink, es una funcion que se encarga de actualizar a url, el useNavigate devuelve una funcion
     const navigate = useNavigate();
+    
 
     const onLogout =() =>{
         
